@@ -10,8 +10,6 @@ class Bendsql < Formula
   depends_on "go" => :build
 
   def install
-    ENV["GOPROXY"] = "https://goproxy.io"
-    system "make install"
     bin.install "bendsql"
   end
 
