@@ -1,10 +1,10 @@
 class Bendsql < Formula
   desc "Work seamlessly with Databend Cloud from the command-line."
   homepage "https://github.com/databendcloud/bendsql"
-  url "https://github.com/databendcloud/bendsql/releases/download/v0.1.2/bendsql-darwin-amd64.tar.gz"
-  sha256 "9b9b1b174e502547fdedfaa2af401d60592b1da9feb7e8a6221d3c130643f135"
+  url "https://github.com/databendcloud/bendsql/releases/download/v0.3.1/bendsql-darwin-amd64.tar.gz"
+  sha256 "6fe4da0186b9d851ea721adb8eb6ad640cc6bc3d3db981ffb9d5ef569829a086"
   license "Apache-2.0"
-  version "v0.1.2"
+  version "v0.3.1"
   head "https://github.com/databendcloud/bendsql.git", branch: "main"
 
   depends_on "go" => :build
