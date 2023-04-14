@@ -1,19 +1,21 @@
 class Bendsql < Formula
-  desc "Work seamlessly with Databend Cloud from the command-line."
-  homepage "https://github.com/databendcloud/bendsql"
-  url "https://github.com/databendcloud/bendsql/releases/download/v0.3.9/bendsql-darwin-amd64.tar.gz"
-  sha256 "2129001b1ee9836c3feb006391928d25a2ee459cd038d0548c727458c2f34938"
+  desc "Databend Native Command-Line Tool"
+  homepage "https://databend.rs"
+  url "https://github.com/datafuselabs/databend-client/archive/v0.2.5.tar.gz"
+  sha256 "8b3b728a4ceba0dc40760d83ba109d9bca24988d24b8998aaada15eb8308f560"
   license "Apache-2.0"
-  version "v0.3.9"
-  head "https://github.com/databendcloud/bendsql.git", branch: "main"
 
-  depends_on "go" => :build
+  depends_on "rust" => :build
 
   def install
-    bin.install "bendsql"
+    build_root = buildpath/"cli"
+    cd build_root do
+      system "cargo", "install", *std_cargo_args
+    end
   end
 
   test do
-    system "false"
+    output = shell_output("#{bin}/bendsql -V")
+    assert_match "bendsql 0.2.5\n", output
   end
 end
