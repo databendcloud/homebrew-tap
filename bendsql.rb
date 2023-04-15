@@ -16,6 +16,6 @@ class Bendsql < Formula
 
   test do
     output = shell_output("#{bin}/bendsql -V")
-    assert_match "bendsql 0.2.5\n", output
+    assert_match "bendsql 0.2.6\n", output
   end
 end
