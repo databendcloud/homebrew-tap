@@ -1,8 +1,8 @@
 class Bendsql < Formula
   desc "Databend Native Command-Line Tool"
   homepage "https://databend.rs"
-  url "https://github.com/datafuselabs/databend-client/archive/v0.3.0.tar.gz"
-  sha256 "632ae1e76f52dc8401d401974feff155101a7559fb21901fd658df510b6e6c4e"
+  url "https://github.com/datafuselabs/databend-client/archive/v0.3.7.tar.gz"
+  sha256 "907c31f49a347d7928a27e0f09647bda1f94ebc1f94e3117c5333952b29df0f5"
   license "Apache-2.0"
 
   depends_on "rust" => :build
