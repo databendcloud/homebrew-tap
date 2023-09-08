@@ -17,12 +17,7 @@ jobs:
   build:
     if: github.event_name == 'pull_request'
     needs: check
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - macos-11
-    runs-on: ${{matrix.os}}
+    runs-on: [self-hosted, macOS, ARM64]
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
