@@ -1,8 +1,8 @@
 class Bendsql < Formula
   desc "Databend Native Command-Line Tool"
   homepage "https://databend.rs"
-  url "https://github.com/datafuselabs/databend-client/archive/v0.6.5.tar.gz"
-  sha256 "da43d6f554774886c1b8ffda3b0a55d46dc4ca9f6521e3124eb3eec10096b623"
+  url "https://github.com/datafuselabs/databend-client/archive/v0.6.6.tar.gz"
+  sha256 "28572d3c47e433c800d9954ae0f639d8bdfc6f835033cb4728ce00eca7f352e0"
   license "Apache-2.0"
 
   bottle do
@@ -13,6 +13,7 @@ class Bendsql < Formula
   depends_on "rust" => :build
 
   def install
+    ENV["BENDSQL_BUILD_INFO"] = "homebrew"
     build_root = buildpath/"cli"
     cd build_root do
       system "cargo", "install", *std_cargo_args
@@ -21,6 +22,6 @@ class Bendsql < Formula
 
   test do
     output = shell_output("#{bin}/bendsql -V")
-    assert_match "bendsql 0.6.5-dev()\n", output
+    assert_match "bendsql 0.6.6-homebrew\n", output
   end
 end
