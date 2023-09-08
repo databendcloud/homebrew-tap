@@ -5,6 +5,11 @@ class Bendsql < Formula
   sha256 "3230c2a6a500738d89364b3990665c634878bb2e34caf0c76c6ebd15139fa42b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/databendcloud/homebrew-tap/releases/download/bendsql-0.6.3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77d3cfe7ca740c71e7b0af61fafe6e348df4b6cd37e3723c2754065f19e91d72"
+  end
+
   depends_on "rust" => :build
 
   def install
