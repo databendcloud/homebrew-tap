@@ -14,8 +14,24 @@ jobs:
       - name: Check formulae
         run: brew test-bot --only-tap-syntax
 
-  build:
-    if: github.event_name == 'pull_request'
+  build_amd64:
+    needs: check
+    runs-on: macos-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      # - run: brew test-bot --only-cleanup-before
+      - run: brew test-bot --only-setup
+      - run: brew test-bot --only-tap-syntax
+      - run: brew test-bot --only-formulae
+      - name: Uplod bottles as artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: bottles
+          path: '*.bottle.*'
+
+  build_arm64:
     needs: check
     runs-on: [self-hosted, macOS, ARM64]
     steps:
