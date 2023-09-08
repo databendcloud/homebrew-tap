@@ -6,7 +6,7 @@ on:
       - labeled
 
 jobs:
-  build:
+  update:
     if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
     runs-on: macos-latest
     steps:
