@@ -18,6 +18,8 @@ jobs:
     if: github.event_name == 'pull_request'
     needs: check
     runs-on: [self-hosted, macOS, ARM64]
+    env:
+      GITHUB_ACTIONS_HOMEBREW_MACOS_SELF_HOSTED: 1
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
