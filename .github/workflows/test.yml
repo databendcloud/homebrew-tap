@@ -34,7 +34,7 @@ jobs:
           brew test-bot --only-formulae --skip-recursive-dependents
       - name: Upload bottles
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bottles
           path: '*.bottle.*'
