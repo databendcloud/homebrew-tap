@@ -18,16 +18,14 @@ jobs:
     if: github.event_name == 'pull_request'
     needs: check
     runs-on: [self-hosted, macOS, ARM64]
-    env:
-      GITHUB_ACTIONS_HOMEBREW_MACOS_SELF_HOSTED: 1
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
-      - name: Build bottles
-        run: |
-          brew test-bot --only-cleanup-before
-          brew test-bot --only-formulae --skip-recursive-dependents
-      - name: Upload bottles
+      - run: brew test-bot --only-cleanup-before
+      - run: brew test-bot --only-setup
+      - run: brew test-bot --only-tap-syntax
+      - run: brew test-bot --only-formulae
+      - name: Uplod bottles as artifact
         if: always()
         uses: actions/upload-artifact@v3
         with:
