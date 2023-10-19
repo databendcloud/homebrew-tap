@@ -6,8 +6,8 @@ class Bendsql < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/databendcloud/homebrew-tap/releases/download/bendsql-0.8.2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f310624ddb057319ff60f5f48bec80665e02efed58ac9eed7b6a18698edd062e"
+    root_url "https://github.com/databendcloud/homebrew-tap/releases/download/bendsql-0.9.1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "340e5a59897b3b1e4a2c1ce3a1c7d8dfe57c2a43f18875360ba3bf1695fb8ff9"
   end
 
   depends_on "rust" => :build
