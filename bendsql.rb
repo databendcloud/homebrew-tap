@@ -1,8 +1,8 @@
 class Bendsql < Formula
   desc "Databend Native Command-Line Tool"
   homepage "https://databend.rs"
-  url "https://github.com/datafuselabs/databend-client/archive/v0.9.1.tar.gz"
-  sha256 "aa345b62c6b9843ab026f91bad23261ee8454508c76a88222dd5b030e7954712"
+  url "https://github.com/datafuselabs/databend-client/archive/v0.9.2.tar.gz"
+  sha256 "aa69e81287d267a8960d04e4259c1a203c34b0e96378f18b4d8d239219576e97"
   license "Apache-2.0"
 
   bottle do
@@ -22,6 +22,6 @@ class Bendsql < Formula
 
   test do
     output = shell_output("#{bin}/bendsql -V")
-    assert_match "bendsql 0.9.1-homebrew\n", output
+    assert_match "bendsql 0.9.2-homebrew\n", output
   end
 end
