@@ -7,7 +7,7 @@ class Bendsql < Formula
 
   bottle do
     root_url "https://github.com/databendcloud/homebrew-tap/releases/download/bendsql-0.12.5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "1f5ea63aca37e4bc1d0e42be4a14b2b50d1b80dcd91ffac4e093c0126a043c81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "37322195c47562ad97c2a5f918356e6b84afddc91da94b3d81b004760428639b"
   end
 
   depends_on "rust" => :build
