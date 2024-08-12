@@ -22,6 +22,6 @@ class Bendsql < Formula
 
   test do
     output = shell_output("#{bin}/bendsql -V")
-    assert_match "bendsql 0.18.2-homebrew\n", output
+    assert_match "bendsql 0.20.1-homebrew\n", output
   end
 end
