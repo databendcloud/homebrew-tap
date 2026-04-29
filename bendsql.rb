@@ -1,7 +1,7 @@
 class Bendsql < Formula
   desc "Databend Native Command-Line Tool"
-  homepage "https://databend.rs"
-  url "https://github.com/datafuselabs/bendsql/archive/refs/tags/v0.20.1.tar.gz"
+  homepage "https://databend.com"
+  url "https://github.com/databendlabs/bendsql/archive/refs/tags/v0.20.1.tar.gz"
   sha256 "8fd2bdaabf592930a136fa32194dffa52288a1c4b140e91ccbad421c72192ab0"
   license "Apache-2.0"
 

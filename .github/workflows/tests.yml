@@ -20,8 +20,9 @@ jobs:
     strategy:
       matrix:
         runner:
-          - macos-13
           - macos-14
+          - macos-15
+          - macos-26
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
